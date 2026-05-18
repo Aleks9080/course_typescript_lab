@@ -3,5 +3,6 @@
 */
 
 export function max(a, b) {
-  return a 
+  // Возвращаем a, если оно больше b, иначе возвращаем b
+  return a > b ? a : b;
 }
