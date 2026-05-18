@@ -3,6 +3,7 @@
 */
 
 export function longerString(a, b) {
-  return a
+  // Возвращаем строку b, только если ее длина больше a.
+  return a.length >= b.length ? a : b;
 }
 
