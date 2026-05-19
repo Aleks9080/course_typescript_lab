@@ -8,7 +8,18 @@
 */
 
 export function grade_student(score) {
-  return 'неудовлетворительно'
+  switch (true) {
+    case score < 60:
+      return "неудовлетворительно";
+    case score >= 60 && score <= 74:
+      return "удовлетворительно";
+    case score >= 75 && score <= 89:
+      return "хорошо";
+    case score >= 90:
+      return "отлично";
+    default:
+      return "неудовлетворительно";
+  }
 }
 
 
