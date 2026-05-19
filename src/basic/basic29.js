@@ -3,5 +3,12 @@
 */
 
 export function rotateArrayLeft(arr) {
+  // Если массив пустой или содержит 1 элемент, сдвиг не требуется
+  if (arr.length <= 1) {
+    return arr;
+  }
+  // Удаляем первый элемент и добавляем его в конец
+  const first = arr.shift();
+  arr.push(first);
   return arr;
 }
