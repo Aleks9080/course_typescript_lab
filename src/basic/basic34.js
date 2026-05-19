@@ -3,8 +3,18 @@
 */
 
 export function isSymmetric(matrix) {
+  const n = matrix.length;
+  if (n === 0) return true;
 
-    return true;
+  // Проверяем симметрию относительно главной диагонали
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      if (matrix[i][j] !== matrix[j][i]) {
+        return false;
+      }
+    }
+  }
+  return true;
 }
 
 
