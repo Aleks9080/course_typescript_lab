@@ -3,6 +3,22 @@
 */
 
 export function second_largest(arr) {
-  return null;
+  if (arr.length < 2) return null;
+
+  let max = -Infinity;
+  let secondMax = -Infinity;
+
+  // Ищем наибольший и второй по величине элементы
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      secondMax = max;
+      max = arr[i];
+    } else if (arr[i] > secondMax && arr[i] < max) {
+      secondMax = arr[i];
+    }
+  }
+
+  // Если второго по величине нет (все элементы равны), возвращаем null
+  return secondMax === -Infinity ? null : secondMax;
 }
 
