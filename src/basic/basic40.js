@@ -4,8 +4,13 @@
 */
 
 export function find(arr, callback) {
-
-    return undefined;
+  // Возвращаем первый элемент, для которого callback вернет true
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      return arr[i];
+    }
+  }
+  return undefined;
 }
 
 
