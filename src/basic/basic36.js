@@ -4,8 +4,14 @@
 */
 
 export function filter(arr, f) {
-
-	return arr;
+  const result = [];
+  // Перебираем массив и добавляем элементы в result, если callback возвращает true
+  for (let i = 0; i < arr.length; i++) {
+    if (f(arr[i])) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
 }
 
 
