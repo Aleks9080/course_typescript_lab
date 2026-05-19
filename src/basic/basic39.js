@@ -3,7 +3,12 @@
 */
 
 export function all(arr, callback) {
-
-	return true;
+  // Возвращаем false, если хотя бы для одного элемента callback вернет false
+  for (let i = 0; i < arr.length; i++) {
+    if (!callback(arr[i])) {
+      return false;
+    }
+  }
+  return true;
 }
 
