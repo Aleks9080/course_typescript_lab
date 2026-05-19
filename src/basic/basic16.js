@@ -3,6 +3,11 @@
 */
 
 export function reverse_list(arr) {
-    return arr;
+  const result = [];
+  // Перебираем исходный массив с конца и добавляем элементы в новый массив
+  for (let i = arr.length - 1; i >= 0; i--) {
+    result.push(arr[i]);
+  }
+  return result;
 }
 
