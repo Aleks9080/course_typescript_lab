@@ -3,5 +3,19 @@
 */
 
 export function swap_first_last(arr) {
-    return arr;
+  const result = [];
+  
+  // Копируем элементы в новый массив
+  for (let i = 0; i < arr.length; i++) {
+    result.push(arr[i]);
+  }
+  
+  // Меняем местами первый и последний элементы, если массив содержит более одного элемента
+  if (result.length > 1) {
+    const temp = result[0];
+    result[0] = result[result.length - 1];
+    result[result.length - 1] = temp;
+  }
+  
+  return result;
 }
