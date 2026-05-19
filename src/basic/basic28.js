@@ -3,6 +3,12 @@
 */
 
 export function removeDuplicates(arr) {
-
-	return arr;
+  const result = [];
+  // Перебираем исходный массив и добавляем элементы в новый, если их там еще нет
+  for (let i = 0; i < arr.length; i++) {
+    if (result.indexOf(arr[i]) === -1) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
 }
