@@ -3,7 +3,8 @@
 */
 
 export function areEqual(a, b, c) {
-    return true
+  // Возвращаем true только если все три числа равны
+  return a === b && b === c;
 }
 
 
