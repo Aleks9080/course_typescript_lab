@@ -3,7 +3,14 @@
 */
 
 export function sum_positive(arr) {
-	return 0;
+  let sum = 0;
+  // Перебираем элементы массива и складываем только положительные
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      sum += arr[i];
+    }
+  }
+  return sum;
 }
 
 
