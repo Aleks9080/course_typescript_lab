@@ -5,5 +5,15 @@
 */
 
 export function strip_special_chars(text) {
-	return "";
+  const allowed = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ';
+  let result = "";
+  
+  // Собираем строку только из разрешенных букв и пробелов
+  for (let i = 0; i < text.length; i++) {
+    if (allowed.includes(text[i])) {
+      result += text[i];
+    }
+  }
+  
+  return result;
 }
