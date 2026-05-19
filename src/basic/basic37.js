@@ -3,8 +3,12 @@
 */
 
 export function map(arr, f) {
-
-  return arr;
+  const result = [];
+  // Применяем callback f к каждому элементу массива и сохраняем результаты в новый массив
+  for (let i = 0; i < arr.length; i++) {
+    result.push(f(arr[i]));
+  }
+  return result;
 }
 
 
