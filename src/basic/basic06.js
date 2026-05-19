@@ -3,6 +3,7 @@
 */
 
 export function check_leap_year(year) {
-  return false;
+  // Год високосный, если кратен 400 ИЛИ кратен 4, но при этом не кратен 100
+  return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
 }
 
