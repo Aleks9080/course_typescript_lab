@@ -3,6 +3,7 @@
 */
 
 export function replace_word(sentence, old_word, new_word) {
-    return "";
+    // Заменяем старое слово на новое
+    return sentence.replace(old_word, new_word);
 }
 
