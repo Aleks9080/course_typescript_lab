@@ -7,6 +7,10 @@ export function addToCollection<T, K extends string>(
     collectionName: K,
     element: T
 ): Record<K, T[]> {
-    return obj;
+    // возвращаем новый объект и новую копию массива, чтобы не мутировать оригинал
+    return {
+        ...obj,
+        [collectionName]: [...obj[collectionName], element],
+    };
 }
 
