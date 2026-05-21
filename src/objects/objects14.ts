@@ -5,8 +5,10 @@
 export const objectWithInnerFunction = {
     value: 10,
     getInnerFunction() {
-        return function() {
-            return this.value; 
+        // возвращаемая функция должна сохранять this из getInnerFunction,
+        // поэтому используем стрелочную функцию вместо обычной
+        return () => {
+            return this.value;
         };
     }
 };
