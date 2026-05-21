@@ -10,6 +10,7 @@ const calculator = {
 };
 
 export function add(value: number) {
-	const adder = calculator.add;
-	return adder(value); 	
+	// теряется контекст this при извлечении метода, поэтому явно привязываем его к calculator
+	const adder = calculator.add.bind(calculator);
+	return adder(value);
 }
