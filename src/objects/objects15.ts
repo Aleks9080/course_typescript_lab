@@ -4,6 +4,11 @@
 
 
 export function updateField<T, K extends keyof T>(obj: T, field: K, value: T[K]): T {
-	return obj;
+  // создаём новый объект через spread, чтобы не мутировать оригинал,
+  // и перезаписываем указанное поле
+  return {
+    ...obj,
+    [field]: value,
+  };
 }
 
