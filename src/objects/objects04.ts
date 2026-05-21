@@ -31,6 +31,11 @@ export const user: User = {
   age: 30,
   address: address,
   equal(other: User) {
-	  return true;
+    // структурное равенство: сравниваем name, age и address.equal
+    return (
+      this.name === other.name &&
+      this.age === other.age &&
+      this.address.equal(other.address)
+    );
   },
 };
