@@ -12,7 +12,8 @@ export const user: User = {
   name: "John",
   age: 30,
   equal(other) {
-	return true;
+    // сравниваем name и age, метод equal игнорируем
+    return this.name === other.name && this.age === other.age;
   }
 };
 
