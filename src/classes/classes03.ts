@@ -15,6 +15,8 @@ export class Student {
 	person: Person;
 	group: string;
 	constructor(name: string, age: number, group: string) {
-
+		// создаём вложенный объект Person и сохраняем группу
+		this.person = new Person(name, age);
+		this.group = group;
 	}
 }
