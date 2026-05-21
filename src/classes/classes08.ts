@@ -6,10 +6,14 @@ export class Animal {
   
   name: string;
   species: string;
+  // статический счётчик количества созданных экземпляров
+  static animalCount: number = 0;
+
   constructor(name: string, species: string) {
     this.name = name;
     this.species = species;
-    
+    // увеличиваем счётчик при каждом создании объекта
+    Animal.animalCount++;
   }
   greet() {
     console.log(
@@ -17,7 +21,8 @@ export class Animal {
     );
   }
   static getAnimalCount() {
-    
+    // возвращаем текущее значение статического счётчика
+    return Animal.animalCount;
   }
 }
 
