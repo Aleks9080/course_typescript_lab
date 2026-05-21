@@ -5,7 +5,11 @@
 export const point = {
 	x: 0,
 	y: 0,
-	move: function (dx: number, dy: number) {
-	}
+  move: function (dx: number, dy: number) {
+    // сдвигаем точку
+    this.x += dx;
+    this.y += dy;
+  }
+
 };
 
