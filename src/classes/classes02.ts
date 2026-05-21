@@ -7,6 +7,8 @@ export class Product {
   price: number;
 
   constructor(name: string, price: number) {
-        
+    // если цена отрицательная — заменяем на 0, иначе сохраняем переданное значение
+    this.name = name;
+    this.price = price < 0 ? 0 : price;
   }
 }
