@@ -7,5 +7,10 @@ export type Summable = {
 }
 
 export function sum<T extends Summable>(a: T[]): T {
-	return a[0];
+  // последовательно складываем элементы через их метод sum, приводим обратно к T
+  let result: Summable = a[0];
+  for (let i = 1; i < a.length; i++) {
+    result = result.sum(a[i]);
+  }
+  return result as T;
 }
