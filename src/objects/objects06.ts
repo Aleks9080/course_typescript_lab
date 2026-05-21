@@ -13,7 +13,13 @@ export const user: User = {
   name: "John",
   age: 30,
   role: ["admin", "user"],
-  equal(other: User) {	
-	return true
+  equal(other: User) {
+    // структурное равенство: name + age + глубокое сравнение массивов role
+    return (
+      this.name === other.name &&
+      this.age === other.age &&
+      this.role.length === other.role.length &&
+      this.role.every((r, i) => r === other.role[i])
+    );
   },
 };
