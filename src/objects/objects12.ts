@@ -4,7 +4,9 @@
 
 const calculator = {
     previousValue: 0,
-    add: (value: number) => {
+    // стрелочная функция не имеет своего this - он берётся из внешней области,
+    // поэтому меняем на обычный метод, чтобы this указывал на calculator
+    add(value: number) {
         return this.previousValue += value;
     }
 };
