@@ -9,6 +9,8 @@ export class Task {
     constructor(title: string);                  // Только название задачи
     constructor(title: string, done: boolean);   // Название и статус завершения
     constructor(title: string, done?: boolean) {
-
+        // если статус не передан - по умолчанию false
+        this.title = title;
+        this.done = done ?? false;
     }
 }
