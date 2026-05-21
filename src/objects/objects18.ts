@@ -5,6 +5,13 @@
 export const user = {
     profile: { name: 'Alice', age: 30 },
     uppercaseProfileNames() {
-        return this;
+        // возвращаем новый объект с глубокой копией profile и name в верхнем регистре
+        return {
+            ...this,
+            profile: {
+                ...this.profile,
+                name: this.profile.name.toUpperCase(),
+            },
+        };
     }
 };
