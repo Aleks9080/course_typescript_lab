@@ -12,6 +12,12 @@ export const user: User = {
   name: "John",
   age: 30,
   copy(name?: string, age?: number) {
-	return this
+    // возвращаем новый объект-копию, чтобы не мутировать оригинал
+    // если аргументы переданы - используем их, иначе сохраняем текущие значения
+    return {
+      ...this,
+      name: name !== undefined ? name : this.name,
+      age: age !== undefined ? age : this.age,
+    };
   },
 };
