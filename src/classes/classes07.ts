@@ -12,7 +12,8 @@ export class Logger {
     }
 
     public static logMessage(message: string): string {
-
+        // формируем строку с использованием текущего статического уровня
+        return `[${Logger.logLevel}] ${message}`;
     }
 }
 
