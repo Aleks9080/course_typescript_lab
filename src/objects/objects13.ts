@@ -6,7 +6,9 @@
 export const user = {
     name: 'Алексей',
     greeting() {
-        const externalFn = function() {
+        // обычная функция теряет this при вызове без контекста,
+        // поэтому используем стрелочную — она берёт this из внешней области (greeting)
+        const externalFn = () => {
             console.log(`Привет, меня зовут ${this.name}`);
         };
         externalFn();
