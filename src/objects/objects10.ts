@@ -3,4 +3,10 @@
 */
 
 export const counter = {
-}
+  x: 0,
+  count() {
+    // увеличиваем x на 1 и сразу возвращаем новое значение
+    this.x += 1;
+    return this.x;
+  },
+};
