@@ -14,7 +14,12 @@ export const user: User = {
   age: 30,
   role: ["admin", "user"],
   copy(name?: string, age?: number, role?: string[]): User {
-    return this;
-
+    // глубокая копия массива role: при отсутствии аргумента создаём новый массив
+    return {
+      ...this,
+      name: name !== undefined ? name : this.name,
+      age: age !== undefined ? age : this.age,
+      role: role !== undefined ? role : [...this.role],
+    };
   },
 };
