@@ -8,6 +8,7 @@ export class Counter {
         Counter.count++;
     }
     static getCurrentCount() {
-
+        // возвращаем текущее значение статического счётчика
+        return Counter.count;
     }
 }
