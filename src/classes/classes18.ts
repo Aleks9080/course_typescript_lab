@@ -22,13 +22,17 @@ export class Circle implements Figure {
   private radius: number;
 
   constructor(x: number, y: number, radius: number) {
+    this.center = new Point(x, y);
+    this.radius = radius;
   }
 
   moveTo(point: Point): void {
-
+    // перемещаем центр окружности в новую точку
+    this.center = point;
   }
 
   getMaxX(): number {
-
+    // максимальная X-координата - центр по X плюс радиус
+    return this.center.x + this.radius;
   }
 }
