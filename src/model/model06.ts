@@ -8,5 +8,8 @@ export interface Flyable {
 
 
 export class Bird implements Flyable {
-
+  // реализация интерфейса Flyable
+  fly(): void {
+    console.log("I'm flying!");
+  }
 }
