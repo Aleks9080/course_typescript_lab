@@ -10,5 +10,14 @@ abstract class DataStorage {
 
 export class MemoryStorage extends DataStorage {
   private data: string = "";
-  
+
+  save(data: string): void {
+    // сохраняем переданные данные во внутреннее поле
+    this.data = data;
+  }
+
+  load(): string {
+    // возвращаем сохранённые данные
+    return this.data;
+  }
 }
