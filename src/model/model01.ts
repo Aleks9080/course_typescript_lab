@@ -14,4 +14,13 @@ export class Animal {
   }
 }
 
-export class Dog 
+export class Dog extends Animal {
+  constructor(name: string) {
+    super(name);
+  }
+
+  // выводит "Woof!" при вызове bark
+  bark(): void {
+    console.log("Woof!");
+  }
+}
