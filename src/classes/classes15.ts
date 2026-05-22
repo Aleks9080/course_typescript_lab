@@ -12,7 +12,8 @@ export class Student {
 	this.last_name = last_name;
     Student.count++;
   }
-  static info(): string {
+  // заменён статический метод info на статический геттер
+  static get info(): string {
     return `Всего ${Student.count} студентов`;
   }
 }
