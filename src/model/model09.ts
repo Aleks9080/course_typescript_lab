@@ -17,6 +17,10 @@ export class Circle extends Shape {
     super();
     this.radius = radius;
   }
-  
+
+  // вычисляем площадь круга по формуле PI * r * r
+  get area(): number {
+    return Math.PI * this.radius * this.radius;
+  }
 }
 
