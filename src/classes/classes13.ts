@@ -19,9 +19,15 @@ export class Lesson {
   }
 
   set number(n: number) {
-
+    // номер пары должен быть от 1 до 7, иначе устанавливаем 0
+    if (n >= 1 && n <= 7) {
+      this._number = n;
+    } else {
+      this._number = 0;
+    }
   }
-  get number(): number {
 
+  get number(): number {
+    return this._number;
   }
 }
