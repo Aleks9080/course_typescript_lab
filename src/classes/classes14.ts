@@ -9,7 +9,8 @@ export class Student {
     this.first_name = first_name;
     this.last_name = last_name;
   }
-  full_name(): string {
+  // преобразован метод full_name в геттер
+  get full_name(): string {
     return `${this.first_name} ${this.last_name}`;
   }
 }
