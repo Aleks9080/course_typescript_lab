@@ -21,6 +21,7 @@ export class Collection<T extends { equals(other: T): boolean }> {
   }
 
   count(item: T): number {
-    
+    // подсчитываем, сколько элементов коллекции равны переданному (через equals)
+    return this.items.filter((i) => i.equals(item)).length;
   }
 }
