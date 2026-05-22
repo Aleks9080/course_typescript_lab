@@ -27,9 +27,15 @@ export class Square implements Figure {
     this.point2 = point2;
   }
   moveTo(point: Point) {
-	
+    // вычисляем смещение и переносим обе точки, сохраняя размер квадрата
+    const dx = point.x - this.point1.x;
+    const dy = point.y - this.point1.y;
+    this.point1 = point;
+    this.point2 = new Point(this.point2.x + dx, this.point2.y + dy);
   }
-  getMaxX() {
 
+  getMaxX() {
+    // максимальная X-координата - это X правого верхнего угла
+    return this.point2.x;
   }
 }
