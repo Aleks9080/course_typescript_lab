@@ -10,5 +10,8 @@ export class Database {
 }
 
 export class UserDatabase extends Database {
-
+  // принимаем любой тип (any) - более широкий, чем object
+  override save(data: any): void {
+    console.log("Saving any data");
+  }
 }
