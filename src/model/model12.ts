@@ -4,7 +4,12 @@
 
 export abstract class MathOperations {
   static pi: number = 3.14159265359;
-  
+
+  // возвращает квадрат числа
+  static square(n: number): number {
+    return n * n;
+  }
+
   abstract calculate(): number;
 
 }
@@ -17,5 +22,9 @@ export class CircleArea extends MathOperations {
     super();
     this.radius = radius;
   }
-  
+
+  // площадь круга
+  calculate(): number {
+    return MathOperations.pi * MathOperations.square(this.radius);
+  }
 }
