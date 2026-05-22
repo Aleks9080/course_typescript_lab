@@ -11,5 +11,9 @@ export class Bird {
 
 
 export class Penguin extends Bird {
-
+  // переопределяем fly: возвращаем Penguin и выводим сообщение
+  override fly(): Penguin {
+    console.log("Cannot fly");
+    return this;
+  }
 }
