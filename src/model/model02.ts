@@ -8,4 +8,9 @@ export class Vehicle {
   }
 }
 
-export class Car 
+export class Car extends Vehicle {
+  // переопределяет move, выводя "Car is moving"
+  override move(): void {
+    console.log("Car is moving");
+  }
+}
