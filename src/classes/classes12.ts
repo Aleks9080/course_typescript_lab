@@ -28,7 +28,10 @@ export class Pair<T> {
   }
 
   public swap(): void {
-    
+    // меняем местами first и second
+    const temp = this.first;
+    this.first = this.second;
+    this.second = temp;
   }
 }
 
