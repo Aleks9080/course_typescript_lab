@@ -3,6 +3,9 @@
 */
 
 export function getArrayElement<T>(array: T[], index: number): T | undefined {
-  // Ваш код здесь (3-4 строки)
+  // проверяем выход за границы массива
+  if (index < 0 || index >= array.length) {
+    return undefined;
+  }
   return array[index];
 }
