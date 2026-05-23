@@ -12,5 +12,8 @@ export class ValidationError extends Error {
 }
 
 export function validateUserAge(age: number): void {
-	// Ваш код здесь
+  // если возраст меньше 18 - бросаем кастомную ValidationError
+  if (age < 18) {
+    throw new ValidationError('Age must be at least 18', 'age');
+  }
 }
