@@ -5,7 +5,11 @@
 import { ResultAsync } from 'neverthrow'
 
 export const fetchNumberFromAPI = (url: string): ResultAsync<number, string> => {
-  // Ваш код здесь (3-5 строк)
+  // оборачиваем mockFetch в ResultAsync, преобразуя ошибку в нужный формат
+  return ResultAsync.fromPromise(
+    mockFetch(url),
+    (error) => `Fetch failed: ${error}`
+  )
 }
 
 // Mock API функция
