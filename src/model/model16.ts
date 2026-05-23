@@ -11,7 +11,7 @@ export class Logger {
 
 export class SafeLogger extends Logger {
   override log(message: string): void {
-     
+    if (!message) return; // ослабляем постусловие: не логируем пустые сообщения
     console.log(message);
   }
 }
