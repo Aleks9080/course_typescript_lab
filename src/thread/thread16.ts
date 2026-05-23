@@ -5,5 +5,11 @@
 import { fetchUser, fetchUserData, fetchUserPosts, fetchUserSettings } from "./promises";
 
 export function getAllUserInfo(id: number): Promise<Array<PromiseSettledResult<any>>> {
-  // TODO: Использовать Promise.allSettled для получения всех результатов
+  // запускаем все четыре запроса и ждём завершения всех, независимо от результата
+  return Promise.allSettled([
+    fetchUser(id),
+    fetchUserData(id),
+    fetchUserPosts(id),
+    fetchUserSettings(id)
+  ]);
 }
