@@ -22,8 +22,8 @@ export class Rectangle {
 
 export class Square extends Rectangle {
   override setSize(width: number, height: number): void {
-    // Квадрат должен сохранять равенство сторон
-    
-    super.setSize(width, height);
+    // сохраняем равенство сторон, выбирая наибольшее значение
+    const side = Math.max(width, height);
+    super.setSize(side, side);
   }
 }
