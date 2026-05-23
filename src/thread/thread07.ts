@@ -16,9 +16,16 @@ export interface User {
 }
 
 export function validateUser(user: User): void {
-  // Ваш код здесь (8-10 строк)
-  // 1. Проверить, что имя не пустое
-  // 2. Проверить, что возраст >= 18
-  // 3. Проверить, что email содержит '@'
-  // Для каждой ошибки бросать UserValidationError с указанием поля
+  // проверка имени
+  if (!user.name) {
+    throw new UserValidationError('Name is required', 'name');
+  }
+  // проверка возраста
+  if (user.age < 18) {
+    throw new UserValidationError('Age must be at least 18', 'age');
+  }
+  // проверка email
+  if (!user.email.includes('@')) {
+    throw new UserValidationError('Invalid email format', 'email');
+  }
 }
