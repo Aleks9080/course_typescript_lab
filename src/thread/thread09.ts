@@ -7,8 +7,15 @@ export async function withRetry<T>(
   maxAttempts: number = 3
 ): Promise<T> {
   let lastError: Error;
-  // Ваш код здесь (8-10 строк)
-  // Попытаться выполнить операцию maxAttempts раз
-  // Если все попытки неудачны, бросить последнюю ошибку
-  throw lastError;
+
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    try {
+      return await operation();
+    } catch (error) {
+      lastError = error as Error;
+    }
+  }
+
+  // если все попытки провалились — бросаем последнюю ошибку
+  throw lastError!;
 }
